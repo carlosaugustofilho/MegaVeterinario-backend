@@ -1,0 +1,12 @@
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\bin\Debug\net6.0\MegaVetClinic.Repository.deps.json
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\bin\Debug\net6.0\MegaVetClinic.Repository.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\bin\Debug\net6.0\MegaVetClinic.Repository.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.csproj.AssemblyReference.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.AssemblyInfoInputs.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.AssemblyInfo.cs
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\refint\MegaVetClinic.Repository.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\ref\MegaVetClinic.Repository.dll

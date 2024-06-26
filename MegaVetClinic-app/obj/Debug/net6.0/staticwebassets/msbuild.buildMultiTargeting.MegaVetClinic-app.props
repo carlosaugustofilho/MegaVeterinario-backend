@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MegaVetClinic-app.props" />
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0IlVKuoxUE+QtjgJapRoAoqq5wIXW2hyPXliO9DjEzA=",
+  "Source": "MegaVetClinic-app",
+  "BasePath": "_content/MegaVetClinic-app",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
