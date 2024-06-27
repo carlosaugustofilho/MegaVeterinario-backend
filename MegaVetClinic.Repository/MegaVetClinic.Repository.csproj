@@ -11,4 +11,8 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MegaVetClinic.Models\MegaVetClinic.Models.csproj" />
+  </ItemGroup>
+
 </Project>

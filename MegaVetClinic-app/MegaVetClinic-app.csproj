@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MegaVetClinic.Business\MegaVetClinic.Business.csproj" />
+    <ProjectReference Include="..\MegaVetClinic.Models\MegaVetClinic.Models.csproj" />
     <ProjectReference Include="..\MegaVetClinic.Repository\MegaVetClinic.Repository.csproj" />
   </ItemGroup>
 

@@ -1,9 +1,10 @@
-﻿using MegaVetClinic.Repository.Models.Response;
+﻿using MegaVetClinic.Models.Requests;
+using MegaVetClinic.Repository.Models.Response;
 
 namespace MegaVetClinic.Repository.Interfaces
 {
     public interface IClienteRepository
     {
-        Task<ClienteResponse> CriarClientesAsync(ClienteRequest clienteRequest);
+        ClienteResponse CriarClientes(ClienteRequest clienteRequest);
     }
 }

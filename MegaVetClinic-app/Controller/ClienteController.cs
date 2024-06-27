@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MegaVetClinic.Repository.Repositories;
+using MegaVetClinic.Repository.Interfaces;
 using MegaVetClinic.Repository.Models.Response;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using MegaVetClinic.Models.Requests;
 
 namespace MegaVetClinic.UI.Controllers
 {
@@ -10,26 +9,26 @@ namespace MegaVetClinic.UI.Controllers
     [Route("api/[controller]")]
     public class ClientesController : ControllerBase
     {
-        private readonly ClienteRepository _clienteRepository;
+        private readonly IClienteRepository _clienteRepository;
 
-        public ClientesController(ClienteRepository clienteRepository)
+        public ClientesController(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
 
-        
-
         [HttpPost]
-        public async Task<ActionResult<ClienteResponse>> CriarClientesAsync([FromBody] ClienteRequest clienteRequest)
+        [Route("CriarCliente")]
+        public IActionResult CriarClientes([FromBody] ClienteRequest clienteRequest)
         {
-            if (clienteRequest == null)
+            try
             {
-                return BadRequest();
+                var result = _clienteRepository.CriarClientes(clienteRequest);
+                return Ok(result);
             }
-
-            var clienteResponse = await _clienteRepository.CriarClientesAsync(clienteRequest);
-
-            return CreatedAtAction(nameof(ClienteRequest), new { id = clienteResponse.Id }, clienteResponse);
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

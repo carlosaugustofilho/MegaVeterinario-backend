@@ -1,0 +1,17 @@
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.csproj.AssemblyReference.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.AssemblyInfoInputs.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.AssemblyInfo.cs
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Business.deps.json
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Business.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Business.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Models.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Repository.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Models.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\bin\Debug\net6.0\MegaVetClinic.Repository.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.csproj.CopyComplete
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\refint\MegaVetClinic.Business.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\MegaVetClinic.Business.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Business\obj\Debug\net6.0\ref\MegaVetClinic.Business.dll

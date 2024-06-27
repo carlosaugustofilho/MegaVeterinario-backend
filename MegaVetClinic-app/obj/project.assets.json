@@ -598,10 +598,35 @@
           }
         }
       },
+      "MegaVetClinic.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MegaVetClinic.Models": "1.0.0",
+          "MegaVetClinic.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MegaVetClinic.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MegaVetClinic.Business.dll": {}
+        }
+      },
+      "MegaVetClinic.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MegaVetClinic.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MegaVetClinic.Models.dll": {}
+        }
+      },
       "MegaVetClinic.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "MegaVetClinic.Models": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.31",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.3"
         },
@@ -2268,6 +2293,16 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "MegaVetClinic.Business/1.0.0": {
+      "type": "project",
+      "path": "../MegaVetClinic.Business/MegaVetClinic.Business.csproj",
+      "msbuildProject": "../MegaVetClinic.Business/MegaVetClinic.Business.csproj"
+    },
+    "MegaVetClinic.Models/1.0.0": {
+      "type": "project",
+      "path": "../MegaVetClinic.Models/MegaVetClinic.Models.csproj",
+      "msbuildProject": "../MegaVetClinic.Models/MegaVetClinic.Models.csproj"
+    },
     "MegaVetClinic.Repository/1.0.0": {
       "type": "project",
       "path": "../MegaVetClinic.Repository/MegaVetClinic.Repository.csproj",
@@ -2277,6 +2312,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper >= 13.0.1",
+      "MegaVetClinic.Business >= 1.0.0",
+      "MegaVetClinic.Models >= 1.0.0",
       "MegaVetClinic.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.31",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.3",
@@ -2320,6 +2357,12 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Business\\MegaVetClinic.Business.csproj": {
+              "projectPath": "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Business\\MegaVetClinic.Business.csproj"
+            },
+            "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Models\\MegaVetClinic.Models.csproj": {
+              "projectPath": "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Models\\MegaVetClinic.Models.csproj"
+            },
             "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Repository\\MegaVetClinic.Repository.csproj": {
               "projectPath": "C:\\Users\\Carlos\\source\\repos\\MegaVetClinic\\MegaVetClinic.Repository\\MegaVetClinic.Repository.csproj"
             }
