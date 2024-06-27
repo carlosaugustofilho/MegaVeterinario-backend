@@ -1,6 +1,9 @@
 ﻿using Microsoft.OpenApi.Models;
 using MegaVetClinic.Core.Context;
 using Microsoft.EntityFrameworkCore;
+using MegaVetClinic_app.Config;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace MegaVetClinic
 {
@@ -15,28 +18,27 @@ namespace MegaVetClinic
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+                });
+
             services.AddAutoMapper(typeof(Startup));
 
-            // Configurando o contexto do banco de dados
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MegaVetClinicContext>(options =>
                 options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 25)),
                     builder => builder.CommandTimeout(600).EnableStringComparisonTranslations()));
 
-            //services.AddSpaStaticFiles(configuration =>
-            //{
-            //    configuration.RootPath = "ClientApp/build";
-            //});
-
-            //InjectionConfig.Configure(services);
+            InjectionConfig.Configure(services);
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mega Vet Clinic API", Version = "v1" });
             });
 
-            // Configuração de CORS
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -66,7 +68,6 @@ namespace MegaVetClinic
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseSpaStaticFiles();
 
             app.UseRouting();
 
@@ -78,9 +79,8 @@ namespace MegaVetClinic
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
-
-          
         }
     }
 }

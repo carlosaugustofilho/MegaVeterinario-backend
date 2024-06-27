@@ -10,3 +10,6 @@ C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\ne
 C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\refint\MegaVetClinic.Repository.dll
 C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.pdb
 C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\ref\MegaVetClinic.Repository.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\bin\Debug\net6.0\MegaVetClinic.Models.dll
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\bin\Debug\net6.0\MegaVetClinic.Models.pdb
+C:\Users\Carlos\source\repos\MegaVetClinic\MegaVetClinic.Repository\obj\Debug\net6.0\MegaVetClinic.Repository.csproj.CopyComplete
