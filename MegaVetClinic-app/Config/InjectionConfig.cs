@@ -12,10 +12,14 @@ namespace MegaVetClinic_app.Config
 
             // Services
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IFuncionarioService, FuncionarioService>();
+
 
 
             //Repositories
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+
 
         }
     }
