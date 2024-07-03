@@ -7,8 +7,11 @@ namespace MegaVetClinic.Repository.Models.Response
     {
         public int Id { get; set; }
 
-        [Column("usuario_id")]
-        public int UsuarioId { get; set; }
+        [Column("nome")]
+        public string Nome { get; set; }
+
+        [Column("sobrenome")]
+        public string Sobrenome { get; set; }
 
         [Column("telefone")]
         public string Telefone { get; set; }
@@ -25,7 +28,6 @@ namespace MegaVetClinic.Repository.Models.Response
         [Column("endereco_id")]
         public int EnderecoId { get; set; }
 
-        public virtual UsuarioResponse Usuario { get; set; }
         public virtual EnderecoResponse Endereco { get; set; }
     }
 }

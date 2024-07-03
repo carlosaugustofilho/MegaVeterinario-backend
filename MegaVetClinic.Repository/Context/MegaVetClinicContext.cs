@@ -15,6 +15,7 @@ namespace MegaVetClinic.Core.Context
         public DbSet<ClienteResponse> Clientes { get; set; }
         public DbSet<EnderecoResponse> Enderecos { get; set; }
         public DbSet<UsuarioResponse> Usuarios { get; set; }
+        public DbSet<FuncionarioResponse> Funcionarios { get; set; }
 
         // Método para execução de comandos SQL
         public void Execute(string sqlCommand)
@@ -50,10 +51,6 @@ namespace MegaVetClinic.Core.Context
                 .HasForeignKey<ClienteResponse>(c => c.EnderecoId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<ClienteResponse>()
-                .HasOne(c => c.Usuario)
-                .WithMany()
-                .HasForeignKey(c => c.UsuarioId);
 
             base.OnModelCreating(modelBuilder);
         }

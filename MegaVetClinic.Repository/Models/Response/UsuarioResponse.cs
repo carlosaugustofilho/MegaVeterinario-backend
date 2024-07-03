@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using MegaVetClinic.Models.Enums;
 
 namespace MegaVetClinic.Repository.Models.Response
 {
@@ -9,7 +9,8 @@ namespace MegaVetClinic.Repository.Models.Response
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
-        public string Tipo { get; set; }
+        public FuncionarioTipo Tipo { get; set; }
         public string Email { get; set; }
+        public DateTime DataCriacao { get; set; }
     }
 }
