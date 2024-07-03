@@ -1,8 +1,8 @@
 ﻿using MegaVetClinic.Core.Context;
-using MegaVetClinic.Models.Enums;
 using MegaVetClinic.Models.Requests;
 using MegaVetClinic.Repository.Interfaces;
 using MegaVetClinic.Repository.Models.Response;
+using MegaVetClinic.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -21,6 +21,7 @@ public class FuncionarioRepository : IFuncionarioRepository
         using var transaction = _context.Database.BeginTransaction();
         try
         {
+            // Criação do usuário
             var usuario = new UsuarioResponse
             {
                 Nome = funcionarioRequest.Nome,
@@ -33,6 +34,22 @@ public class FuncionarioRepository : IFuncionarioRepository
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
+            // Criação do endereço
+            var endereco = new EnderecoResponse
+            {
+                Cep = funcionarioRequest.Endereco.Cep,
+                Rua = funcionarioRequest.Endereco.Rua,
+                Numero = funcionarioRequest.Endereco.Numero,
+                Complemento = funcionarioRequest.Endereco.Complemento,
+                Bairro = funcionarioRequest.Endereco.Bairro,
+                Cidade = funcionarioRequest.Endereco.Cidade,
+                Estado = funcionarioRequest.Endereco.Estado
+            };
+
+            _context.Enderecos.Add(endereco);
+            _context.SaveChanges();
+
+            // Criação do funcionário
             var funcionario = new FuncionarioResponse
             {
                 UsuarioId = usuario.Id,
@@ -41,7 +58,7 @@ public class FuncionarioRepository : IFuncionarioRepository
                 Salario = funcionarioRequest.Salario,
                 Beneficios = funcionarioRequest.Beneficios,
                 Email = funcionarioRequest.Email,
-                EnderecoId = funcionarioRequest.EnderecoId
+                EnderecoId = endereco.Id
             };
 
             _context.Funcionarios.Add(funcionario);

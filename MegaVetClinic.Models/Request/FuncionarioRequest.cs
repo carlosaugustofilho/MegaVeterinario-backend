@@ -11,6 +11,6 @@ namespace MegaVetClinic.Models.Requests
         public decimal? Salario { get; set; }
         public string Beneficios { get; set; }
         public string Email { get; set; }
-        public int EnderecoId { get; set; }
+        public EnderecoRequest Endereco { get; set; }
     }
 }
