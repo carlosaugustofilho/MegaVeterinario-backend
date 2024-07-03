@@ -626,6 +626,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "MegaVetClinic.Models": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.31",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.3"
