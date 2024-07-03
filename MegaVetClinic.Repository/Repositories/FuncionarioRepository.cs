@@ -3,10 +3,8 @@ using MegaVetClinic.Core.Context;
 using MegaVetClinic.Models.Requests;
 using MegaVetClinic.Repository.Interfaces;
 using MegaVetClinic.Repository.Models.Response;
-using MegaVetClinic.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 
 public class FuncionarioRepository : IFuncionarioRepository
 {
@@ -24,17 +22,15 @@ public class FuncionarioRepository : IFuncionarioRepository
         using var transaction = _context.Database.BeginTransaction();
         try
         {
-            // Mapear FuncionarioRequest para UsuarioResponse
             var usuario = _mapper.Map<UsuarioResponse>(funcionarioRequest);
+            usuario.DataContratacao = DateTime.Now; 
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            // Mapear EnderecoRequest para EnderecoResponse
             var endereco = _mapper.Map<EnderecoResponse>(funcionarioRequest.Endereco);
             _context.Enderecos.Add(endereco);
             _context.SaveChanges();
 
-            // Mapear FuncionarioRequest para FuncionarioResponse
             var funcionario = _mapper.Map<FuncionarioResponse>(funcionarioRequest);
             funcionario.UsuarioId = usuario.Id;
             funcionario.EnderecoId = endereco.Id;

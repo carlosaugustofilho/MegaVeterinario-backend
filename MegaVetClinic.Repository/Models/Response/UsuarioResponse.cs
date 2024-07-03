@@ -11,6 +11,7 @@ namespace MegaVetClinic.Repository.Models.Response
         public string Senha { get; set; }
         public FuncionarioTipo Tipo { get; set; }
         public string Email { get; set; }
-        public DateTime DataCriacao { get; set; }
+        [Column("data_contratacao")]
+        public DateTime DataContratacao { get; set; } 
     }
 }
