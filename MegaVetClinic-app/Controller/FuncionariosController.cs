@@ -2,7 +2,6 @@
 using MegaVetClinic.Business.Interfaces;
 using MegaVetClinic.Models.Requests;
 using System;
-using MegaVetClinic.Business.Service;
 
 namespace MegaVetClinic.UI.Controllers
 {
