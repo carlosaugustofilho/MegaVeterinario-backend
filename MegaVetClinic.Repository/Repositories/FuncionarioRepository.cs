@@ -1,4 +1,5 @@
-﻿using MegaVetClinic.Core.Context;
+﻿using AutoMapper;
+using MegaVetClinic.Core.Context;
 using MegaVetClinic.Models.Requests;
 using MegaVetClinic.Repository.Interfaces;
 using MegaVetClinic.Repository.Models.Response;
@@ -10,10 +11,12 @@ using System.Linq;
 public class FuncionarioRepository : IFuncionarioRepository
 {
     private readonly MegaVetClinicContext _context;
+    private readonly IMapper _mapper;
 
-    public FuncionarioRepository(MegaVetClinicContext context)
+    public FuncionarioRepository(MegaVetClinicContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     public FuncionarioResponse CadastrarFuncionario(FuncionarioRequest funcionarioRequest)
@@ -21,45 +24,20 @@ public class FuncionarioRepository : IFuncionarioRepository
         using var transaction = _context.Database.BeginTransaction();
         try
         {
-            // Criação do usuário
-            var usuario = new UsuarioResponse
-            {
-                Nome = funcionarioRequest.Nome,
-                Senha = funcionarioRequest.Senha,
-                Tipo = FuncionarioTipo.Funcionario,
-                Email = funcionarioRequest.Email,
-                DataCriacao = DateTime.Now
-            };
-
+            // Mapear FuncionarioRequest para UsuarioResponse
+            var usuario = _mapper.Map<UsuarioResponse>(funcionarioRequest);
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            // Criação do endereço
-            var endereco = new EnderecoResponse
-            {
-                Cep = funcionarioRequest.Endereco.Cep,
-                Rua = funcionarioRequest.Endereco.Rua,
-                Numero = funcionarioRequest.Endereco.Numero,
-                Complemento = funcionarioRequest.Endereco.Complemento,
-                Bairro = funcionarioRequest.Endereco.Bairro,
-                Cidade = funcionarioRequest.Endereco.Cidade,
-                Estado = funcionarioRequest.Endereco.Estado
-            };
-
+            // Mapear EnderecoRequest para EnderecoResponse
+            var endereco = _mapper.Map<EnderecoResponse>(funcionarioRequest.Endereco);
             _context.Enderecos.Add(endereco);
             _context.SaveChanges();
 
-            // Criação do funcionário
-            var funcionario = new FuncionarioResponse
-            {
-                UsuarioId = usuario.Id,
-                Cargo = funcionarioRequest.Cargo,
-                DataContratacao = funcionarioRequest.DataContratacao,
-                Salario = funcionarioRequest.Salario,
-                Beneficios = funcionarioRequest.Beneficios,
-                Email = funcionarioRequest.Email,
-                EnderecoId = endereco.Id
-            };
+            // Mapear FuncionarioRequest para FuncionarioResponse
+            var funcionario = _mapper.Map<FuncionarioResponse>(funcionarioRequest);
+            funcionario.UsuarioId = usuario.Id;
+            funcionario.EnderecoId = endereco.Id;
 
             _context.Funcionarios.Add(funcionario);
             _context.SaveChanges();
