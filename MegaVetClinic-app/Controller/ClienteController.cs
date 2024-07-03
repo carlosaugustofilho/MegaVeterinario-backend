@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MegaVetClinic.Repository.Interfaces;
-using MegaVetClinic.Repository.Models.Response;
+using MegaVetClinic.Business.Interfaces;
 using MegaVetClinic.Models.Requests;
+using System;
 
 namespace MegaVetClinic.UI.Controllers
 {
@@ -9,21 +9,62 @@ namespace MegaVetClinic.UI.Controllers
     [Route("api/[controller]")]
     public class ClientesController : ControllerBase
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly IClienteService _clienteService;
 
-        public ClientesController(IClienteRepository clienteRepository)
+        public ClientesController(IClienteService clienteService)
         {
-            _clienteRepository = clienteRepository;
+            _clienteService = clienteService;
         }
 
-        [HttpPost]
-        [Route("CriarCliente")]
+        [HttpPost("CriarCliente")]
         public IActionResult CriarClientes([FromBody] ClienteRequest clienteRequest)
         {
             try
             {
-                var result = _clienteRepository.CriarClientes(clienteRequest);
+                var result = _clienteService.CriarClientes(clienteRequest);
                 return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("{clienteId}")]
+        public IActionResult BuscarClientePorId(int clienteId)
+        {
+            try
+            {
+                var cliente = _clienteService.BuscarClientePorId(clienteId);
+                return Ok(cliente);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpPut("{clienteId}")]
+        public IActionResult AtualizarCliente(int clienteId, [FromBody] ClienteRequest clienteRequest)
+        {
+            try
+            {
+                var cliente = _clienteService.AtualizarCliente(clienteId, clienteRequest);
+                return Ok(cliente);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("BuscarPorCpf/{cpf}")]
+        public IActionResult BuscarClientePorCpf(string cpf)
+        {
+            try
+            {
+                var cliente = _clienteService.BuscarClientePorCpf(cpf);
+                return Ok(cliente);
             }
             catch (Exception ex)
             {
