@@ -17,8 +17,7 @@ namespace MegaVetClinic.Repository.Models.Response
         public string Telefone { get; set; }
 
         [Column("data_nascimento")]
-        public DateTime? DataNascimento { get; set; } // Atualize para nullable se necessário
-
+        public DateTime? DataNascimento { get; set; } 
         [Column("cpf")]
         public string CPF { get; set; }
 

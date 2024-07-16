@@ -44,7 +44,7 @@ namespace MegaVetClinic.UI.Controllers
             }
         }
 
-        [HttpPut("{clienteId}")]
+        [HttpPut("{AtualizarCliente}")]
         public IActionResult AtualizarCliente(int clienteId, [FromBody] ClienteRequest clienteRequest)
         {
             try
