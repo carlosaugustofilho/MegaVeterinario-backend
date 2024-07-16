@@ -28,6 +28,9 @@ namespace MegaVetClinic.Repository.Models.Response
         [Column("endereco_id")]
         public int EnderecoId { get; set; }
 
+        public bool Ativo { get; set; } 
+
+
         public virtual UsuarioResponse Usuario { get; set; }
         public virtual EnderecoResponse Endereco { get; set; }
     }

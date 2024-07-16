@@ -18,5 +18,22 @@ namespace MegaVetClinic.Business.Service
         {
             return _funcionarioRepository.CadastrarFuncionario(funcionarioRequest);
         }
+
+        public FuncionarioResponse BuscarFuncionarioPorId(int funcionarioId)
+        {
+            return _funcionarioRepository.BuscarFuncionarioPorId(funcionarioId);
+        }
+
+        public FuncionarioResponse AtualizarFuncionario(int funcionarioId, FuncionarioRequest funcionarioRequest)
+        {
+            return _funcionarioRepository.AtualizarFuncionario(funcionarioId, funcionarioRequest);
+        }
+
+        public FuncionarioResponse AlterarStatusFuncionario(int funcionarioId, bool ativo)
+        {
+            return _funcionarioRepository.AlterarStatusFuncionario(funcionarioId, ativo);
+        }
+
+
     }
 }

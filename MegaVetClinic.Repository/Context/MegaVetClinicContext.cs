@@ -42,7 +42,7 @@ namespace MegaVetClinic.Core.Context
             modelBuilder.Entity<ClienteResponse>()
                 .HasOne(c => c.Endereco)
                 .WithOne(e => e.Cliente)
-                .HasForeignKey<EnderecoResponse>(e => e.Id) // Definindo a chave estrangeira correta
+                .HasForeignKey<EnderecoResponse>(e => e.Id) 
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<EnderecoResponse>()

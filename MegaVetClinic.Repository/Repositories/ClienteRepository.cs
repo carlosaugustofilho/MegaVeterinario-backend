@@ -139,6 +139,11 @@ public class ClienteRepository : IClienteRepository
         return cliente;
     }
 
+     public bool Exist(string email)
+    {
+        return _context.Funcionarios.Any(f => f.Usuario.Email == email);
+    }
+
     private string LimparCpf(string cpf)
     {
         return Regex.Replace(cpf, @"[^\d]", "");
